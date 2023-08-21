@@ -83,7 +83,7 @@ func (s *service) IsEmailAvailable(input CheckEmailInput) (bool, error) {
 }
 
 func (s *service) SaveAvatar(ID int, fileLocation string) (User, error) {
-	user, err := s.repository.FindById(ID)
+	user, err := s.repository.FindByID(ID)
 	if err != nil {
 		return user, err
 	}
@@ -99,7 +99,7 @@ func (s *service) SaveAvatar(ID int, fileLocation string) (User, error) {
 }
 
 func (s *service) GetUserByID(ID int) (User, error) {
-	user, err := s.repository.FindById(ID)
+	user, err := s.repository.FindByID(ID)
 	if err != nil {
 		return user, err
 	}
